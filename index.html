@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuroBloom | AI Wellness App</title>
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#4CAF50" />
+
+  <!-- Apple PWA support -->
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+</head>
+<body>
+  <header>
+    <h1>🌸 NeuroBloom</h1>
+    <p>AI-driven Biofeedback and Immersive Wellness Ecosystem</p>
+  </header>
+
+  <main>
+    <section id="input-section">
+      <h2>How are you feeling today?</h2>
+      <textarea id="userInput" placeholder="Describe your mood or thoughts..."></textarea>
+      <button id="analyzeBtn">Analyze My Mood</button>
+    </section>
+
+    <section id="output-section">
+      <h2>AI Wellness Insight 🌿</h2>
+      <p id="output">Your personalized wellness feedback will appear here.</p>
+    </section>
+  </main>
+
+  
+
+  <!-- Link to JS -->
+  <script src="app.js"></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("sw.js")
+          .then((reg) => console.log("✅ Service Worker registered:", reg))
+          .catch((err) => console.log("❌ Service Worker failed:", err));
+      });
+    }
+  </script>
+</body>
+</html>
